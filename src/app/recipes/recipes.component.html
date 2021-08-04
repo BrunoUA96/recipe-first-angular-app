@@ -1,0 +1,19 @@
+<div class="row">
+  <app-recipe-list
+    class="col"
+    style="transition: all 0.7s ease-in-out"
+    (recipeSelected)="selectedRecipe = $event"
+    [positionCard]="showDetail"
+  ></app-recipe-list>
+  <div
+    [ngClass]="showDetail ? 'col-5' : ''"
+    [ngStyle]="{
+      'max-width': showDetail ? '' : '0',
+      'max-height': showDetail ? '100%' : '0',
+      opacity: showDetail ? '' : '0'
+    }"
+    style="transition: all 0.7s ease-in-out; overflow: hidden"
+  >
+    <router-outlet></router-outlet>
+  </div>
+</div>

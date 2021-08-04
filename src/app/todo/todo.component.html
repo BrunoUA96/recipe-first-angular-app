@@ -1,0 +1,49 @@
+<div class="row mb-5">
+  <div class="col-lg-6 offset-lg-3">
+    <h1 class="text-center">
+      <span>Todo</span>
+      App
+    </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 offset-lg-3">
+    <form class="d-flex" #f="ngForm" (ngSubmit)="submTodoForm(f)">
+      <div class="mb-0 w-75">
+        <input
+          type="text"
+          class="form-control"
+          style="height: 60px"
+          required
+          ngModel
+          name="text"
+        />
+        <div class="form-text text-danger" *ngIf="checkValidForm">
+          Please enter the text
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-success ms-4"
+        style="width: 200px; flex-shrink: 0; height: 60px"
+      >
+        Add
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-lg-6 offset-lg-3">
+    <ul class="list-inline">
+      <app-todo-item
+        *ngFor="let todo of todos"
+        [todoItem]="todo"
+        (todoClicked)="toggleCheckedItem(todo)"
+        (editTodoItem)="editTodo(todo)"
+      ></app-todo-item>
+    </ul>
+  </div>
+</div>

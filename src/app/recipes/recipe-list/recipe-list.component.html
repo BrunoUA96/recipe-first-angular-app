@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-12 mb-5 position-relative">
+    <h1><span>List</span> Recipes</h1>
+    <a
+      [routerLink]="['new']"
+      class="btn btn-success"
+      style="
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      "
+    >
+      New Recipe
+    </a>
+  </div>
+  <app-recipe-item
+    *ngFor="let recipe of recipes; let i = index"
+    [recipe]="recipe"
+    [ngClass]="positionCard ? 'col-4' : 'col-3'"
+    [recipeId]="i"
+  ></app-recipe-item>
+</div>

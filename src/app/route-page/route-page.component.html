@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col d-flex justify-content-center align-items-center"
+      style="height: calc(100vh - 108px); margin-top: -48px"
+    >
+      <h1 class="text-center">
+        <span
+          style="transition: all 0.2s ease-in-out"
+          [ngStyle]="{ backgroundColor: color }"
+        >
+          Welcome
+        </span>
+
+        to Recipe Angular App
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          [attr.fill]="color"
+          class="bi bi-bookmark-star-fill"
+          viewBox="0 0 16 16"
+          style="transition: all 0.2s ease-in-out"
+        >
+          <path
+            *ngFor="let icon of svgIcons"
+            [ngStyle]="{ opacity: icon == svgIcon ? '1' : '0' }"
+            style="transition: all 0.2s ease-in-out"
+            [attr.d]="icon"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </h1>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

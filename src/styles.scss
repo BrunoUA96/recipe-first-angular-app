@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+// import Bootstrap Styles
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+// Global Styles
+h1 {
+  span {
+    background-color: #0d6efd;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 10px 0 8px;
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

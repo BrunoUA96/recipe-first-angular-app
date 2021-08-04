@@ -1,0 +1,15 @@
+.nav {
+  &-link {
+    &.active {
+      color: #0d6efd !important;
+    }
+  }
+}
+.navbar-brand {
+  &.active {
+    background-color: #0d6efd;
+    color: #fff;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}

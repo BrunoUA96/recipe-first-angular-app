@@ -1,0 +1,60 @@
+<app-shopping-list-add
+  [item]="selectedItem"
+  (cleared)="cleared()"
+></app-shopping-list-add>
+<div class="row">
+  <div class="col-lg-6 offset-lg-3 my-3" *ngIf="items.length > 0">
+    <hr />
+  </div>
+  <div class="col-lg-6 offset-lg-3 mb-5" *ngIf="items.length > 0">
+    <ul class="list-group">
+      <li class="list-group-item d-flex">
+        <span class="w-75 d-flex align-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-down-short me-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          Name
+        </span>
+        <span class="d-flex align-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-down-short me-1"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          Amount
+        </span>
+      </li>
+      <li
+        class="list-group-item d-flex text-reset"
+        style="line-height: 40px; cursor: pointer"
+        *ngFor="let item of items"
+        (click)="onClick(item)"
+      >
+        <span class="w-75 ps-1">
+          {{ item.name }}
+        </span>
+        <span class="ps-1">
+          {{ item.amount }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
